@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.btn {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  margin: 1rem 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+body {
+  background: linear-gradient(60deg, black, rgba(91, 95, 95, 0.8), black);
+  color: white;
+  font-family: "Baloo 2", cursive;
+  section.animation-wrapper {
+    //固定動畫位置
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    section.animation {
+      // border: 5px solid red;
+      margin-top: 10vh;
+      height: 80vh;
+      //開場上下各預留10
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .hero {
+        // border: 5px solid green;
+        width: 100%;
+        height: 0;
+        //設定圖片一開始高度為0, 然後逐漸變大
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(to right, rgb(121, 120, 122), black);
+      z-index: -1;
+    }
+  }
+  header {
+    background-color: black;
+    nav {
+      box-shadow: 0 8px 6px -6px black;
+      ul {
+        display: flex;
+        li {
+          padding: 1rem;
+          a {
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            &:hover {
+              color: yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+  main {
+    section.main-part {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.15rem;
+      }
+      div.button {
+        // border: 3px solid red;
+        margin: 0.5rem;
+        padding: 0.5rem;
+        width: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style-type: none;
+        justify-content: center;
+        flex-direction: row;
+        button.btn {
+          flex: 0 1 100px;
+          margin: 0.5rem;
+          padding: 0.5rem;
+          height: 50%;
+          width: 35%;
+          border-radius: 15%;
+          font-size: 0.8rem;
+          background: linear-gradient(
+            to bottom right,
+            rgb(121, 250, 250),
+            rgb(18, 30, 203)
+          );
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: center;
+          color: white;
+          flex-direction: column;
+          transition: all 0.5s ease;
+          &:hover {
+            color: rgba(15, 96, 236, 0.8);
+          }
+        }
+      }
+      div.all-inputs {
+        // border: 3px solid blue;
+        form {
+          input,
+          select {
+            font-size: 1.05rem;
+            padding: 0.5rem;
+            border: 0.25px solid rgb(39, 39, 20);
+            margin: 0.38rem;
+            border-radius: 0.25rem;
+          }
+          input.class-credit {
+            width: 10%;
+          }
+          button {
+            border: none;
+            cursor: pointer;
+            //讓使用者知道可以點擊
+            background-color: #272727;
+            i {
+              font-size: 1.25rem;
+              pointer-events: none;
+              color: white;
+            }
+          }
+        }
+      }
+      button.plus-btn {
+        background-color: #272727;
+        border: none;
+        border-radius: 15%;
+        width: 2.5rem;
+        margin: 3rem 0rem;
+        cursor: pointer;
+        i {
+          font-size: 2.5rem;
+          color: white;
+        }
+      }
+      div.result {
+        width: 200px;
+        height: 200px;
+        border: 3px solid red;
+        border-radius: 50%;
+        text-align: center;
+        animation-name: border_color;
+        animation-duration: 14s;
+        animation-iteration-count: infinite;
+        p {
+          margin-top: 15px;
+        }
+        h2#result-gpa {
+          font-size: 3.8rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+.remove {
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+} //大小由0到1的動畫
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+} //大小由0到1的動畫
+
+@keyframes border_color {
+  0% {
+    border-color: red;
+  }
+  14% {
+    border-color: orange;
+  }
+  28% {
+    border-color: yellow;
+  }
+  41% {
+    border-color: limegreen;
+  }
+  55% {
+    border-color: blue;
+  }
+  70% {
+    border-color: indigo;
+  }
+  84% {
+    border-color: purple;
+  }
+}
